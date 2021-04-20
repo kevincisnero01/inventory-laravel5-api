@@ -1,9 +1,9 @@
 <?php
 
-namespace APIRestful\Http\Controllers\Buyer;
+namespace App\Http\Controllers\Buyer;
 
 use Illuminate\Http\Request;
-use APIRestful\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 
 class BuyerController extends Controller
 {

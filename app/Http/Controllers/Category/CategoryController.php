@@ -1,9 +1,9 @@
 <?php
 
-namespace APIRestful\Http\Controllers\Category;
+namespace App\Http\Controllers\Category;
 
 use Illuminate\Http\Request;
-use APIRestful\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 
 class CategoryController extends Controller
 {

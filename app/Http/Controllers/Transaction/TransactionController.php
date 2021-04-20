@@ -1,9 +1,9 @@
 <?php
 
-namespace APIRestful\Http\Controllers\Transaction;
+namespace App\Http\Controllers\Transaction;
 
 use Illuminate\Http\Request;
-use APIRestful\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 
 class TransactionController extends Controller
 {

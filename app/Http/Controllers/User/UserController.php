@@ -1,9 +1,9 @@
 <?php
 
-namespace APIRestful\Http\Controllers\User;
+namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
-use APIRestful\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
