@@ -1,0 +1,244 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"_",
+				"_POST"
+			],
+			[
+				"id",
+				"idproducto"
+			],
+			[
+				"json",
+				"json_last_error"
+			],
+			[
+				"ut",
+				"utf8_encode"
+			],
+			[
+				"array_wal",
+				"array_walk_recursive"
+			],
+			[
+				"print",
+				"print_r"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"instll",
+				"Install Package Control"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/APIRestful"
+	],
+	"file_history":
+	[
+		"/D/Sistema/xampp/htdocs/facebook/api/usuarios.php",
+		"/D/Sistema/xampp/htdocs/facebook/clases/usuario.php",
+		"/D/Sistema/xampp/htdocs/facebook/clases/conexion.php",
+		"/D/Sistema/xampp/htdocs/facebook/pdo/index.php",
+		"/D/Sistema/xampp/htdocs/facebook2/clases/usuario.php",
+		"/D/Sistema/xampp/htdocs/facebook2/clases/conexion.php",
+		"/D/Sistema/xampp/htdocs/facebook2/api/usuarios.php",
+		"/D/Sistema/xampp/htdocs/facebook/index.php",
+		"/D/Sistema/xampp/htdocs/facebook/pdo/usuario.php",
+		"/D/Sistema/xampp/htdocs/facebook/pdo/conexion.php",
+		"/D/Sistema/xampp/htdocs/facebook/api/productos.php",
+		"/D/Sistema/xampp/htdocs/facebook/.htaccess",
+		"/D/Sistema/xampp/htdocs/almacenes-api/index.php",
+		"/D/Sistema/xampp/htdocs/facebook/public/css/style.css",
+		"/D/Sistema/xampp/htdocs/facebook/clases/index.php",
+		"/D/Sistema/xampp/htdocs/almacenes-api/utilidades.php",
+		"/C/Users/WORKSTATION/AppData/Roaming/Sublime Text 3/Packages/Emmet/Emmet.sublime-settings",
+		"/D/Sistema/xampp/htdocs/almacenes-api/db.php",
+		"/D/Sistema/xampp/htdocs/almacenes-api/public/css/style.css",
+		"/D/Sistema/xampp/htdocs/SALIVSS/bd/almacen_ivss - host.sql",
+		"/D/Sistema/xampp/htdocs/SALIVSS/index.php",
+		"/D/Sistema/xampp/phpMyAdmin/config.inc.php",
+		"/C/Users/WORKSTATION/Links/htdocs.lnk"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"idUpdate",
+			"$pdo",
+			"url",
+			"$_GET['id']",
+			"con",
+			"connect",
+			"idusuari",
+			"$id",
+			"idUsuario",
+			"_POST",
+			"GET",
+			"productos",
+			"queryDatos",
+			"resInsert",
+			"insertDatos",
+			"array",
+			"proveedor",
+			"familia",
+			"descripcion",
+			"idproducto",
+			"query"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 39.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "APIRestful.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 210.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
