@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
+use Illuminate\Database\QueryException;
 
 class Handler extends ExceptionHandler
 {
@@ -80,12 +81,21 @@ class Handler extends ExceptionHandler
 
         if($exception instanceof MethodNotAllowedHttpException)
         {
-            return $this->errorResponse('El metodo especificado en la peticion no es válido', 405);
+            return $this->errorResponse('El metodo especificado en la peticion no es valido', 405);
         }
 
         if($exception instanceof HttpException)
         {
             return $this->errorResponse($exception->getMessage(), $exception->getStatusCode());
+        }
+
+        if($exception instanceof QueryException)
+        {
+            $codigo = $exception->errorInfo[1];
+
+            if($codigo == 1451){
+                return $this->errorResponse('No se puede eliminar de forma permanente el recurso, porque esta relacionado con algun otro', 409);
+            }
         }
 
         return parent::render($request, $exception);
