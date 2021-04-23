@@ -4,9 +4,9 @@ namespace App\Http\Controllers\User;
 
 use App\User;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\ApiController;
 
-class UserController extends Controller
+class UserController extends ApiController
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class UserController extends Controller
     public function index()
     {
         $usuarios = User::all();
-        return response()->json(['data' => $usuarios],200);
+        return $this->showAll($usuarios);
     }
 
 
@@ -38,12 +38,12 @@ class UserController extends Controller
 
         $campos = $request->all();
         $campos['password'] = bcrypt($request->password);
-        /*$campos['verified'] = User::USUARIO_NO_VERIFICADO; 
+        $campos['verified'] = User::USUARIO_NO_VERIFICADO; 
         $campos['verification_token'] = User::generarVerificationToken();
-        $campos['admin'] = User::USUARIO_REGULAR;*/
+        $campos['admin'] = User::USUARIO_REGULAR;/**/
 
         $usuario = User::create($campos);
-        return response()->json(['data' => $usuario], 201);
+        return $this->showOne($usuario,201);
     }
 
     /**
@@ -55,7 +55,7 @@ class UserController extends Controller
     public function show($id)
     {
         $usuario = User::findOrFail($id);
-        return response()->json(['data' => $usuario],200);
+        return $this->showOne($usuario,200);
     }
 
 
@@ -100,7 +100,7 @@ class UserController extends Controller
         {
             if(!$user->esVerificado())
             {
-                return response()->json(['error' => 'Unicamente los usuarios verificados pueden cambiar su valor de  administrador', 'code' => 409], 409);
+                return $this->errorResponse('Unicamente los usuarios verificados pueden cambiar su valor de  administrador', 409);
             }
 
             $user->admin = $request->admin;
@@ -108,11 +108,11 @@ class UserController extends Controller
 
         if(!$user->isDirty())
         {
-            return response()->json(['error' => 'Se debe especificar al menos un valor diferente para actualizar','code' => 409],409);
+            return $this->errorResponse('Se debe especificar al menos un valor diferente para actualizar', 409);
         }
 
         $user->save();
-        return response()->json(['data' => $user], 200);
+        return $this->showOne($user,200);
     }
 
     /**
@@ -125,6 +125,6 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
         $user->delete();
-        return response()->json(['data' => $user],200);
+        return $this->showOne($user,200);
     }
 }
