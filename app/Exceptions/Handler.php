@@ -5,9 +5,11 @@ namespace App\Exceptions;
 use Exception;
 use App\Traits\ApiResponser;
 use Illuminate\Auth\AuthenticationException;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+
 
 class Handler extends ExceptionHandler
 {
@@ -57,7 +59,17 @@ class Handler extends ExceptionHandler
         if($exception instanceof ModelNotFoundException)
         {   
             $modelo = strtolower(class_basename($exception->getModel()));
-            return $this->errorResponse("No existe ninguna instancia de {$modelo} con el id especificado",404);
+            return $this->errorResponse("No existe ninguna instancia de {$modelo} con el id especificado", 404);
+        }
+
+        if($exception instanceof AuthenticationException)
+        {
+            return $this->unauthenticated($request, $exception);
+        }
+
+        if($exception instanceof AuthorizationException)
+        {
+            return $this->errorResponse('No posee permisos para ejecutar esta accion',403);
         }
 
         return parent::render($request, $exception);
@@ -72,11 +84,8 @@ class Handler extends ExceptionHandler
      */
     protected function unauthenticated($request, AuthenticationException $exception)
     {
-        if ($request->expectsJson()) {
-            return response()->json(['error' => 'Unauthenticated.'], 401);
-        }
 
-        return redirect()->guest(route('login'));
+        return $this->errorResponse('Usuario no autenticado',401);
     }
 
         /**
