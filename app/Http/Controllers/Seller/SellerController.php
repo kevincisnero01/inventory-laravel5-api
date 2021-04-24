@@ -15,10 +15,10 @@ class SellerController extends ApiController
         return $this->showAll($vendedores);
     }
 
-    public function show($id)
+    public function show(Seller $seller)
     {
-        $vendedor = Seller::has('products')->findOrFail($id);
-        return $this->showOne($vendedor,200);
+        //$vendedor = Seller::has('products')->findOrFail($id);//omitido por globalScope (Seller $seller)
+        return $this->showOne($seller,200);
     }
 
 }

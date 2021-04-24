@@ -100,10 +100,10 @@ class Handler extends ExceptionHandler
 
         if(config('app.debug'))
         {
-            return $this->errorResponse('Algo esta mal, intenta mas tarde',500);
+            return parent::render($request, $exception); 
         }
 
-        return parent::render($request, $exception);
+        return $this->errorResponse('Algo esta mal, intenta mas tarde',500);
     }
 
     /**

@@ -42,8 +42,8 @@ class UserController extends ApiController
         $campos['verification_token'] = User::generarVerificationToken();
         $campos['admin'] = User::USUARIO_REGULAR;/**/
 
-        $usuario = User::create($campos);
-        return $this->showOne($usuario,201);
+        $user = User::create($campos);
+        return $this->showOne($user,201);
     }
 
     /**
@@ -52,10 +52,10 @@ class UserController extends ApiController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
-        $usuario = User::findOrFail($id);
-        return $this->showOne($usuario,200);
+        //$user = User::findOrFail($id); // omitido por inyeccion implicita
+        return $this->showOne($user,200);
     }
 
 
@@ -66,11 +66,8 @@ class UserController extends ApiController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,User $user)
     {
-        $user = User::findOrFail($id);
-
-        
         $reglas = [
             'email' => 'email|unique:users,email,'.$user->id,
             'password' => 'min:6|confirmed',
@@ -121,9 +118,8 @@ class UserController extends ApiController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        $user = User::findOrFail($id);
         $user->delete();
         return $this->showOne($user,200);
     }
