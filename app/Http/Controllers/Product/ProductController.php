@@ -24,10 +24,6 @@ class ProductController extends ApiController
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -57,10 +53,6 @@ class ProductController extends ApiController
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
